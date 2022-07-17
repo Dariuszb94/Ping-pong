@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import { Pawn } from './PlayerStyles';
 
 const Player = () => {
   return (
@@ -10,9 +10,3 @@ const Player = () => {
 };
 
 export default Player;
-
-const Pawn = styled.div`
-  height: 200px;
-  width: 40px;
-  background-color: black;
-`;
