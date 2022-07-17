@@ -4,14 +4,14 @@ import styled from 'styled-components';
 const Player = () => {
   return (
     <>
-      <Square></Square>
+      <Pawn></Pawn>
     </>
   );
 };
 
 export default Player;
 
-const Square = styled.div`
+const Pawn = styled.div`
   height: 200px;
   width: 40px;
 `;
