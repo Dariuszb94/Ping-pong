@@ -4,7 +4,13 @@ import { Pawn } from './PlayerStyles';
 const Player = () => {
   const [position, setPosition] = useState(0);
 
-  const handleKeyUpDown = () => {};
+  const handleKeyUpDown = (event: KeyboardEvent) => {
+    console.log(event);
+    if (event.key === 'ArrowUp') {
+    }
+    if (event.key === 'ArrowDown') {
+    }
+  };
   useEffect(() => {
     document.addEventListener('keydown', handleKeyUpDown, false);
 
