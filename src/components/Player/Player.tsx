@@ -11,4 +11,7 @@ const Player = () => {
 
 export default Player;
 
-const Square = styled.div``;
+const Square = styled.div`
+  height: 200px;
+  width: 40px;
+`;
