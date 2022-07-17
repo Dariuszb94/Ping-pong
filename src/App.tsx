@@ -1,7 +1,12 @@
 import React from 'react';
+import Player from './components/Player/Player';
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <Player />
+    </>
+  );
 }
 
 export default App;
