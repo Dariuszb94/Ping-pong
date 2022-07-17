@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Pawn } from './PlayerStyles';
 
 const Player = () => {
+  const [position, setPosition] = useState(0);
+
   const handleKeyUpDown = () => {};
   useEffect(() => {
     document.addEventListener('keydown', handleKeyUpDown, false);
@@ -10,6 +12,7 @@ const Player = () => {
       document.removeEventListener('keydown', handleKeyUpDown, false);
     };
   }, []);
+
   return (
     <>
       <Pawn></Pawn>
