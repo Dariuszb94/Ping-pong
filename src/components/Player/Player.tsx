@@ -11,6 +11,7 @@ const Player = () => {
     if (event.key === 'ArrowDown') {
     }
   };
+
   useEffect(() => {
     document.addEventListener('keydown', handleKeyUpDown, false);
 
