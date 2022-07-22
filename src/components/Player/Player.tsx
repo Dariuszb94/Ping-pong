@@ -24,7 +24,7 @@ const Player = () => {
 
   return (
     <>
-      <Pawn></Pawn>
+      <Pawn position={position}></Pawn>
     </>
   );
 };
