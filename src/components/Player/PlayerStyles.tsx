@@ -5,4 +5,5 @@ export const Pawn = styled.div`
   width: 40px;
   background-color: black;
   position: absolute;
+  left: 0;
 `;
