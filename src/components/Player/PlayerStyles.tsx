@@ -6,5 +6,5 @@ export const Pawn = styled.div<{ position: number }>`
   background-color: black;
   position: absolute;
   left: 0;
-  top: ${(props) => props.position};
+  top: ${(props) => props.position}px;
 `;
