@@ -5,11 +5,18 @@ const Player = () => {
   const [position, setPosition] = useState(0);
 
   const handleKeyUpDown = (event: KeyboardEvent) => {
+    console.log(position);
     if (event.key === 'ArrowUp') {
-      setPosition((prev) => prev - 10);
+      setPosition((prev) => {
+        if (prev >= 10) return prev - 10;
+        return prev;
+      });
     }
     if (event.key === 'ArrowDown') {
-      setPosition((prev) => prev + 10);
+      setPosition((prev) => {
+        if (prev <= 70) return prev + 10;
+        return prev;
+      });
     }
   };
 
@@ -19,7 +26,7 @@ const Player = () => {
     return () => {
       document.removeEventListener('keydown', handleKeyUpDown, false);
     };
-  }, []);
+  });
 
   return (
     <>
