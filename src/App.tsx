@@ -1,10 +1,10 @@
 import React from 'react';
-import Player from './components/Player/Player';
+import BoardContainer from './components/Board/BoardContainer';
 
 function App() {
   return (
     <>
-      <Player />
+      <BoardContainer></BoardContainer>
     </>
   );
 }
