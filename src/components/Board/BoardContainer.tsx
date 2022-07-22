@@ -2,11 +2,15 @@ import React from 'react';
 import Player from '../Player/Player';
 import { Board } from './BoardContainerStyles';
 
-const BoardContainer = () => {
+interface BoardContainerProps {
+  position: number;
+}
+
+const BoardContainer = ({ position }: BoardContainerProps) => {
   return (
     <>
       <Board>
-        <Player />
+        <Player position={position} />
       </Board>
     </>
   );

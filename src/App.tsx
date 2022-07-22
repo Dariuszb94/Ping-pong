@@ -1,12 +1,68 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import BoardContainer from './components/Board/BoardContainer';
+import styled from 'styled-components';
 
 function App() {
+  const [position, setPosition] = useState(0);
+
+  const handleKeyUpDown = (event: KeyboardEvent) => {
+    if (event.key === 'ArrowUp') {
+      setPosition((prev) => {
+        if (prev >= 10) return prev - 10;
+        return prev;
+      });
+    }
+    if (event.key === 'ArrowDown') {
+      setPosition((prev) => {
+        if (prev <= 70) return prev + 10;
+        return prev;
+      });
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyUpDown, false);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyUpDown, false);
+    };
+  });
+
   return (
     <>
-      <BoardContainer></BoardContainer>
+      <ButtonDown
+        onClick={() =>
+          setPosition((prev) => {
+            if (prev >= 10) return prev - 10;
+            return prev;
+          })
+        }
+      >
+        UP
+      </ButtonDown>
+      <ButtonUp
+        onClick={() =>
+          setPosition((prev) => {
+            if (prev <= 70) return prev + 10;
+            return prev;
+          })
+        }
+      >
+        DOWN
+      </ButtonUp>
+
+      <BoardContainer position={position}></BoardContainer>
     </>
   );
 }
 
 export default App;
+
+export const ButtonUp = styled.button`
+  width: 40px;
+  height: 40px;
+`;
+export const ButtonDown = styled.button`
+  width: 40px;
+  height: 40px;
+`;
