@@ -6,10 +6,10 @@ const Player = () => {
 
   const handleKeyUpDown = (event: KeyboardEvent) => {
     if (event.key === 'ArrowUp') {
-      setPosition((prev) => prev + 10);
+      setPosition((prev) => prev - 10);
     }
     if (event.key === 'ArrowDown') {
-      setPosition((prev) => prev - 10);
+      setPosition((prev) => prev + 10);
     }
   };
 
