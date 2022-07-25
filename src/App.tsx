@@ -66,6 +66,7 @@ export const ButtonUp = styled.button`
   width: 80px;
   height: 80px;
   border-radius: 4px;
+  margin-bottom: 8px;
 `;
 export const ButtonDown = styled.button`
   cursor: pointer;
