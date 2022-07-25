@@ -31,7 +31,7 @@ function App() {
   return (
     <BoardOuter>
       <section>
-        <ButtonDown
+        <ButtonUp
           onClick={() =>
             setPosition((prev) => {
               if (prev >= 10) return prev - 10;
@@ -40,8 +40,8 @@ function App() {
           }
         >
           UP
-        </ButtonDown>
-        <ButtonUp
+        </ButtonUp>
+        <ButtonDown
           onClick={() =>
             setPosition((prev) => {
               if (prev <= 70) return prev + 10;
@@ -50,7 +50,7 @@ function App() {
           }
         >
           DOWN
-        </ButtonUp>
+        </ButtonDown>
       </section>
       <BoardContainer position={position}></BoardContainer>
     </BoardOuter>
