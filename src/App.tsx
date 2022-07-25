@@ -63,7 +63,7 @@ export const ButtonUp = styled.button`
   cursor: pointer;
   border: none;
   outline: none;
-  width: 80px;
+  width: 100%;
   height: 80px;
   border-radius: 4px;
   margin-bottom: 8px;
@@ -72,10 +72,11 @@ export const ButtonDown = styled.button`
   cursor: pointer;
   border: none;
   outline: none;
-  width: 80px;
+  width: 100%;
   height: 80px;
   border-radius: 4px;
 `;
 export const BoardOuter = styled.div`
   display: flex;
+  padding: 20px;
 `;
