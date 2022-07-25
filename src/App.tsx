@@ -60,12 +60,12 @@ function App() {
 export default App;
 
 export const ButtonUp = styled.button`
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
 `;
 export const ButtonDown = styled.button`
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
 `;
 export const BoardOuter = styled.div`
   display: flex;
