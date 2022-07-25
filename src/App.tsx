@@ -68,8 +68,12 @@ export const ButtonUp = styled.button`
   border-radius: 4px;
 `;
 export const ButtonDown = styled.button`
+  cursor: pointer;
+  border: none;
+  outline: none;
   width: 80px;
   height: 80px;
+  border-radius: 4px;
 `;
 export const BoardOuter = styled.div`
   display: flex;
