@@ -67,11 +67,14 @@ export const ButtonUp = styled.button`
   min-width: 80px;
   height: 80px;
   border-radius: 4px;
-  margin-bottom: 8px;
+  @media (min-width: 1001px) {
+    margin-bottom: 8px;
+  }
   @media (max-width: 1000px) {
     position: absolute;
     top: 0;
     width: calc(100% - 40px);
+    margin-top: 8px;
   }
 `;
 export const ButtonDown = styled.button`
@@ -86,6 +89,7 @@ export const ButtonDown = styled.button`
     position: absolute;
     bottom: 0;
     width: calc(100% - 40px);
+    margin-bottom: 8px;
   }
 `;
 export const BoardOuter = styled.div`
