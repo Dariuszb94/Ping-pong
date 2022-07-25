@@ -29,30 +29,31 @@ function App() {
   });
 
   return (
-    <section>
-      <ButtonDown
-        onClick={() =>
-          setPosition((prev) => {
-            if (prev >= 10) return prev - 10;
-            return prev;
-          })
-        }
-      >
-        UP
-      </ButtonDown>
-      <ButtonUp
-        onClick={() =>
-          setPosition((prev) => {
-            if (prev <= 70) return prev + 10;
-            return prev;
-          })
-        }
-      >
-        DOWN
-      </ButtonUp>
-
+    <BoardOuter>
+      <section>
+        <ButtonDown
+          onClick={() =>
+            setPosition((prev) => {
+              if (prev >= 10) return prev - 10;
+              return prev;
+            })
+          }
+        >
+          UP
+        </ButtonDown>
+        <ButtonUp
+          onClick={() =>
+            setPosition((prev) => {
+              if (prev <= 70) return prev + 10;
+              return prev;
+            })
+          }
+        >
+          DOWN
+        </ButtonUp>
+      </section>
       <BoardContainer position={position}></BoardContainer>
-    </section>
+    </BoardOuter>
   );
 }
 
@@ -65,4 +66,7 @@ export const ButtonUp = styled.button`
 export const ButtonDown = styled.button`
   width: 40px;
   height: 40px;
+`;
+export const BoardOuter = styled.div`
+  display: flex;
 `;
