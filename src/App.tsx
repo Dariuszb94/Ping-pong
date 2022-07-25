@@ -29,7 +29,7 @@ function App() {
   });
 
   return (
-    <>
+    <section>
       <ButtonDown
         onClick={() =>
           setPosition((prev) => {
@@ -52,7 +52,7 @@ function App() {
       </ButtonUp>
 
       <BoardContainer position={position}></BoardContainer>
-    </>
+    </section>
   );
 }
 
