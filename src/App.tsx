@@ -81,4 +81,7 @@ export const ButtonDown = styled.button`
 export const BoardOuter = styled.div`
   display: flex;
   padding: 20px;
+  @media (max-width: 1000px) {
+    padding: 100px 20px;
+  }
 `;
