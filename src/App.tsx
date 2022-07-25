@@ -64,6 +64,7 @@ export const ButtonUp = styled.button`
   border: none;
   outline: none;
   width: 100%;
+  min-width: 80px;
   height: 80px;
   border-radius: 4px;
   margin-bottom: 8px;
@@ -73,6 +74,7 @@ export const ButtonDown = styled.button`
   border: none;
   outline: none;
   width: 100%;
+  min-width: 80px;
   height: 80px;
   border-radius: 4px;
 `;
