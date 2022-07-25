@@ -8,11 +8,9 @@ interface BoardContainerProps {
 
 const BoardContainer = ({ position }: BoardContainerProps) => {
   return (
-    <>
-      <Board>
-        <Player position={position} />
-      </Board>
-    </>
+    <Board>
+      <Player position={position} />
+    </Board>
   );
 };
 
