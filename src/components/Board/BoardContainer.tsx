@@ -17,7 +17,7 @@ const BoardContainer = ({ position }: BoardContainerProps) => {
       setBallPositionY((prev) => prev + 1);
     }, 300);
 
-    return () => clearInterval(intervalId); //This is important
+    return () => clearInterval(intervalId);
   }, []);
   return (
     <Board>
