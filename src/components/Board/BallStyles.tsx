@@ -4,8 +4,8 @@ export const Ball = styled.div<{
   ballPositionX: number;
   ballPositionY: number;
 }>`
-  height: 3%;
   width: 3%;
+  aspect-ratio: 1;
   border-radius: 50%;
   background-color: red;
   position: absolute;
