@@ -13,9 +13,9 @@ const BoardContainer = ({ position }: BoardContainerProps) => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setBallPositionX((prev) => prev + 10);
-      setBallPositionY((prev) => prev + 10);
-    }, 500);
+      setBallPositionX((prev) => prev + 1);
+      setBallPositionY((prev) => prev + 1);
+    }, 300);
 
     return () => clearInterval(intervalId); //This is important
   }, []);
