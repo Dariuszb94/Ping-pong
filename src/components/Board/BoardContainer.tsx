@@ -7,19 +7,24 @@ import { Board } from './BoardContainerStyles';
 const BoardContainer = () => {
   const [ballPositionX, setBallPositionX] = useState(50);
   const [ballPositionY, setBallPositionY] = useState(50);
+  const [isBallRightToLeft, setIsBallRightToLeft] = useState(false);
+
   const { playerPosition } = useContext(PositionsContext);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setBallPositionX((prev) => prev + 1);
+      if (isBallRightToLeft) setBallPositionX((prev) => prev - 1);
+      else setBallPositionX((prev) => prev + 1);
       setBallPositionY((prev) => prev + 1);
     }, 300);
 
     return () => clearInterval(intervalId);
-  }, []);
+  }, [isBallRightToLeft]);
   useEffect(() => {
-    console.log(ballPositionX);
-  }, [ballPositionX, ballPositionY, playerPosition]);
+    if (ballPositionX === 93 && !isBallRightToLeft) {
+      setIsBallRightToLeft(true);
+    }
+  }, [ballPositionX, ballPositionY, isBallRightToLeft, playerPosition]);
   return (
     <Board>
       <Player />
