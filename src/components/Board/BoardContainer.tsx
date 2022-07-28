@@ -17,6 +17,9 @@ const BoardContainer = () => {
 
     return () => clearInterval(intervalId);
   }, []);
+  useEffect(() => {
+    console.log(ballPositionX);
+  }, [ballPositionX, ballPositionY, playerPosition]);
   return (
     <Board>
       <Player />
