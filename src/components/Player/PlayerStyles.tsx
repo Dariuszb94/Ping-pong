@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Pawn = styled.div<{ position: number }>`
   height: 20%;
-  width: 40px;
+  width: 3%;
   background-color: black;
   position: absolute;
   left: 0;

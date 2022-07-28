@@ -4,8 +4,9 @@ export const Ball = styled.div<{
   ballPositionX: number;
   ballPositionY: number;
 }>`
-  height: 40px;
-  width: 40px;
+  height: 3%;
+  width: 3%;
+  border-radius: 50%;
   background-color: red;
   position: absolute;
   top: ${(props) => props.ballPositionY}%;
