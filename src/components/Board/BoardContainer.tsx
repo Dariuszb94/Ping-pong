@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { PositionsContext } from '../../context/PositionsContext';
 import Player from '../Player/Player';
 import { Ball } from './BallStyles';
 import { Board } from './BoardContainerStyles';
@@ -6,6 +7,7 @@ import { Board } from './BoardContainerStyles';
 const BoardContainer = () => {
   const [ballPositionX, setBallPositionX] = useState(50);
   const [ballPositionY, setBallPositionY] = useState(50);
+  const { playerPosition } = useContext(PositionsContext);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
