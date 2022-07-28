@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { PositionsContext } from '../../App';
 import { Pawn } from './PlayerStyles';
 
-interface PlayerProps {
-  position: number;
-}
-const Player = ({ position }: PlayerProps) => {
+const Player = () => {
+  const { playerPosition } = useContext(PositionsContext);
+
   return (
     <>
-      <Pawn position={position}></Pawn>
+      <Pawn position={playerPosition}></Pawn>
     </>
   );
 };

@@ -3,11 +3,7 @@ import Player from '../Player/Player';
 import { Ball } from './BallStyles';
 import { Board } from './BoardContainerStyles';
 
-interface BoardContainerProps {
-  position: number;
-}
-
-const BoardContainer = ({ position }: BoardContainerProps) => {
+const BoardContainer = () => {
   const [ballPositionX, setBallPositionX] = useState(50);
   const [ballPositionY, setBallPositionY] = useState(50);
 
@@ -21,7 +17,7 @@ const BoardContainer = ({ position }: BoardContainerProps) => {
   }, []);
   return (
     <Board>
-      <Player position={position} />
+      <Player />
       <Ball ballPositionX={ballPositionX} ballPositionY={ballPositionY}></Ball>
     </Board>
   );

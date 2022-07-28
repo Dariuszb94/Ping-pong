@@ -1,19 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, createContext } from 'react';
 import BoardContainer from './components/Board/BoardContainer';
 import styled from 'styled-components';
 
-function App() {
-  const [position, setPosition] = useState(0);
+interface IPositions {
+  playerPosition: number;
+  oponentPosition: number;
+}
+const positionsContext: IPositions = {
+  playerPosition: 50,
+  oponentPosition: 50,
+};
+export const PositionsContext = createContext(positionsContext);
 
+function App() {
+  const [playerPosition, setPlayerPosition] = useState(
+    positionsContext.playerPosition
+  );
   const handleKeyUpDown = (event: KeyboardEvent) => {
     if (event.key === 'ArrowUp') {
-      setPosition((prev) => {
+      setPlayerPosition((prev) => {
         if (prev >= 10) return prev - 10;
         return prev;
       });
     }
     if (event.key === 'ArrowDown') {
-      setPosition((prev) => {
+      setPlayerPosition((prev) => {
         if (prev <= 70) return prev + 10;
         return prev;
       });
@@ -29,31 +40,38 @@ function App() {
   });
 
   return (
-    <BoardOuter>
-      <section>
-        <ButtonUp
-          onClick={() =>
-            setPosition((prev) => {
-              if (prev >= 10) return prev - 10;
-              return prev;
-            })
-          }
-        >
-          UP
-        </ButtonUp>
-        <ButtonDown
-          onClick={() =>
-            setPosition((prev) => {
-              if (prev <= 70) return prev + 10;
-              return prev;
-            })
-          }
-        >
-          DOWN
-        </ButtonDown>
-      </section>
-      <BoardContainer position={position}></BoardContainer>
-    </BoardOuter>
+    <PositionsContext.Provider
+      value={{
+        playerPosition: playerPosition,
+        oponentPosition: playerPosition,
+      }}
+    >
+      <BoardOuter>
+        <section>
+          <ButtonUp
+            onClick={() =>
+              setPlayerPosition((prev) => {
+                if (prev >= 10) return prev - 10;
+                return prev;
+              })
+            }
+          >
+            UP
+          </ButtonUp>
+          <ButtonDown
+            onClick={() =>
+              setPlayerPosition((prev) => {
+                if (prev <= 70) return prev + 10;
+                return prev;
+              })
+            }
+          >
+            DOWN
+          </ButtonDown>
+        </section>
+        <BoardContainer />
+      </BoardOuter>
+    </PositionsContext.Provider>
   );
 }
 
