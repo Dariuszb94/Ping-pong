@@ -1,20 +1,11 @@
-import React, { useEffect, useState, createContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import BoardContainer from './components/Board/BoardContainer';
 import styled from 'styled-components';
-
-interface IPositions {
-  playerPosition: number;
-  oponentPosition: number;
-}
-const positionsContext: IPositions = {
-  playerPosition: 50,
-  oponentPosition: 50,
-};
-export const PositionsContext = createContext(positionsContext);
+import { defaultPositions, PositionsContext } from './context/PositionsContext';
 
 function App() {
   const [playerPosition, setPlayerPosition] = useState(
-    positionsContext.playerPosition
+    defaultPositions.playerPosition
   );
   const handleKeyUpDown = (event: KeyboardEvent) => {
     if (event.key === 'ArrowUp') {

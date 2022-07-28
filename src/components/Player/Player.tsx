@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { PositionsContext } from '../../App';
+import { PositionsContext } from '../../context/PositionsContext';
 import { Pawn } from './PlayerStyles';
 
 const Player = () => {
