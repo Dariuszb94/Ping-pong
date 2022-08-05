@@ -16,11 +16,13 @@ const BoardContainer = () => {
     const intervalId = setInterval(() => {
       if (isBallRightToLeft) setBallPositionX((prev) => prev - 1);
       else setBallPositionX((prev) => prev + 1);
-      setBallPositionY((prev) => prev + 1);
+
+      if (isBallBottomToUp) setBallPositionY((prev) => prev - 1);
+      else setBallPositionY((prev) => prev + 1);
     }, 160);
 
     return () => clearInterval(intervalId);
-  }, [isBallRightToLeft]);
+  }, [isBallBottomToUp, isBallRightToLeft]);
   useEffect(() => {
     if (ballPositionY === 97 && !isBallBottomToUp) setIsBallBottomToUp(true);
     if (ballPositionX === 93 && !isBallRightToLeft) setIsBallRightToLeft(true);
