@@ -14,6 +14,8 @@ const BoardContainer = () => {
   const { playerPosition } = useContext(PositionsContext);
 
   useEffect(() => {
+    const randomAngle = Math.random() * (0.9 - 1.1) + 0.9;
+
     const intervalId = setInterval(() => {
       if (isBallRightToLeft) setBallPositionX((prev) => prev - 1);
       else setBallPositionX((prev) => prev + 1);
