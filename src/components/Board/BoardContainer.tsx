@@ -19,7 +19,7 @@ const BoardContainer = () => {
 
       if (isBallBottomToUp) setBallPositionY((prev) => prev - 1);
       else setBallPositionY((prev) => prev + 1);
-    }, 160);
+    }, 100);
 
     return () => clearInterval(intervalId);
   }, [isBallBottomToUp, isBallRightToLeft]);
