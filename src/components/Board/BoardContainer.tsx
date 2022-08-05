@@ -16,7 +16,7 @@ const BoardContainer = () => {
       if (isBallRightToLeft) setBallPositionX((prev) => prev - 1);
       else setBallPositionX((prev) => prev + 1);
       setBallPositionY((prev) => prev + 1);
-    }, 300);
+    }, 160);
 
     return () => clearInterval(intervalId);
   }, [isBallRightToLeft]);
