@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { PositionsContext } from '../../context/PositionsContext';
+import Computer from '../Computer/Computer';
 import Player from '../Player/Player';
 import { Ball } from './BallStyles';
 import { Board } from './BoardContainerStyles';
@@ -38,6 +39,7 @@ const BoardContainer = () => {
   return (
     <Board>
       <Player />
+      <Computer />
       <Ball ballPositionX={ballPositionX} ballPositionY={ballPositionY}></Ball>
     </Board>
   );
