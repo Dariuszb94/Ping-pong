@@ -26,6 +26,7 @@ const BoardContainer = () => {
   useEffect(() => {
     if (ballPositionY === 97 && !isBallBottomToUp) setIsBallBottomToUp(true);
     if (ballPositionX === 93 && !isBallRightToLeft) setIsBallRightToLeft(true);
+    if (ballPositionX === 1 && isBallRightToLeft) setIsBallRightToLeft(false);
   }, [
     ballPositionX,
     ballPositionY,
