@@ -22,7 +22,7 @@ const BoardContainer = () => {
     return () => clearInterval(intervalId);
   }, [isBallRightToLeft]);
   useEffect(() => {
-    if (ballPositionY === 97 && isBallBottomToUp) setIsBallBottomToUp(true);
+    if (ballPositionY === 97 && !isBallBottomToUp) setIsBallBottomToUp(true);
     if (ballPositionX === 93 && !isBallRightToLeft) setIsBallRightToLeft(true);
   }, [
     ballPositionX,
