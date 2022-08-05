@@ -8,6 +8,7 @@ const BoardContainer = () => {
   const [ballPositionX, setBallPositionX] = useState(50);
   const [ballPositionY, setBallPositionY] = useState(50);
   const [isBallRightToLeft, setIsBallRightToLeft] = useState(false);
+  const [isBallBottomToUp, setIsBallBottomToUp] = useState(false);
 
   const { playerPosition } = useContext(PositionsContext);
 
@@ -21,10 +22,15 @@ const BoardContainer = () => {
     return () => clearInterval(intervalId);
   }, [isBallRightToLeft]);
   useEffect(() => {
-    if (ballPositionX === 93 && !isBallRightToLeft) {
-      setIsBallRightToLeft(true);
-    }
-  }, [ballPositionX, ballPositionY, isBallRightToLeft, playerPosition]);
+    if (ballPositionY === 97 && isBallBottomToUp) setIsBallBottomToUp(true);
+    if (ballPositionX === 93 && !isBallRightToLeft) setIsBallRightToLeft(true);
+  }, [
+    ballPositionX,
+    ballPositionY,
+    isBallBottomToUp,
+    isBallRightToLeft,
+    playerPosition,
+  ]);
   return (
     <Board>
       <Player />
