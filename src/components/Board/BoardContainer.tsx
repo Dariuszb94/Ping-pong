@@ -31,7 +31,6 @@ const BoardContainer = () => {
       ballPositionX >= 93 &&
       (playerPosition > ballPositionY || playerPosition + 20 < ballPositionY)
     ) {
-      s;
       console.log('game over');
     }
     if (ballPositionY >= 97 && !isBallBottomToUp) {
