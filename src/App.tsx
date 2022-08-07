@@ -35,7 +35,6 @@ function App() {
     <PositionsContext.Provider
       value={{
         playerPosition: playerPosition,
-        oponentPosition: playerPosition,
       }}
     >
       <BoardOuter>
