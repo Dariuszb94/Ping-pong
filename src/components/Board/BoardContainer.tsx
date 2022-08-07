@@ -22,15 +22,30 @@ const BoardContainer = () => {
 
       if (isBallBottomToUp) setBallPositionY((prev) => prev - 1);
       else setBallPositionY((prev) => prev + 1);
-    }, 10);
+    }, 30);
 
     return () => clearInterval(intervalId);
   }, [isBallBottomToUp, isBallRightToLeft]);
   useEffect(() => {
-    if (ballPositionY >= 97 && !isBallBottomToUp) setIsBallBottomToUp(true);
-    if (ballPositionX >= 93 && !isBallRightToLeft) setIsBallRightToLeft(true);
-    if (ballPositionX <= 1 && isBallRightToLeft) setIsBallRightToLeft(false);
-    if (ballPositionY <= 3 && isBallBottomToUp) setIsBallBottomToUp(false);
+    if (
+      ballPositionX >= 93 &&
+      (playerPosition > ballPositionY || playerPosition + 20 < ballPositionY)
+    ) {
+      s;
+      console.log('game over');
+    }
+    if (ballPositionY >= 97 && !isBallBottomToUp) {
+      setIsBallBottomToUp(true);
+    }
+    if (ballPositionX >= 93 && !isBallRightToLeft) {
+      setIsBallRightToLeft(true);
+    }
+    if (ballPositionX <= 1 && isBallRightToLeft) {
+      setIsBallRightToLeft(false);
+    }
+    if (ballPositionY <= 3 && isBallBottomToUp) {
+      setIsBallBottomToUp(false);
+    }
   }, [
     ballPositionX,
     ballPositionY,
