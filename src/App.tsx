@@ -7,6 +7,7 @@ function App() {
   const [playerPosition, setPlayerPosition] = useState(
     defaultPositions.playerPosition
   );
+
   const handleKeyUpDown = (event: KeyboardEvent) => {
     if (event.key === 'ArrowUp') {
       setPlayerPosition((prev) => {

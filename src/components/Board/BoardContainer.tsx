@@ -55,7 +55,7 @@ const BoardContainer = () => {
   return (
     <Board>
       <Player />
-      <Computer />
+      <Computer computerPosition={50} />
       <Ball ballPositionX={ballPositionX} ballPositionY={ballPositionY}></Ball>
     </Board>
   );
