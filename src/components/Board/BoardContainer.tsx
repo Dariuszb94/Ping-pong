@@ -17,12 +17,12 @@ const BoardContainer = () => {
     const randomAngle = Math.random() * (0.9 - 1.1) + 0.9;
 
     const intervalId = setInterval(() => {
-      if (isBallRightToLeft) setBallPositionX((prev) => prev - 1);
-      else setBallPositionX((prev) => prev + 1);
+      if (isBallRightToLeft) setBallPositionX((prev) => prev - randomAngle);
+      else setBallPositionX((prev) => prev + randomAngle);
 
       if (isBallBottomToUp) setBallPositionY((prev) => prev - 1);
       else setBallPositionY((prev) => prev + 1);
-    }, 100);
+    }, 10);
 
     return () => clearInterval(intervalId);
   }, [isBallBottomToUp, isBallRightToLeft]);
