@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import { PositionsContext } from '../../context/PositionsContext';
+import React from 'react';
 import { Pawn } from './ComputerStyles';
 
 interface IPlayer {
@@ -7,11 +6,9 @@ interface IPlayer {
 }
 
 const Player = ({ computerPosition }: IPlayer) => {
-  const { playerPosition } = useContext(PositionsContext);
-
   return (
     <>
-      <Pawn position={playerPosition}></Pawn>
+      <Pawn position={computerPosition}></Pawn>
     </>
   );
 };
