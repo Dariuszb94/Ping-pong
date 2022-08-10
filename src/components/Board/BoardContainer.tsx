@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { PositionsContext } from '../../context/PositionsContext';
+import { IBoardContainer } from '../../types/types';
 import Computer from '../Computer/Computer';
 import Player from '../Player/Player';
 import { Ball } from './BallStyles';
 import { Board } from './BoardContainerStyles';
 
-const BoardContainer = () => {
+const BoardContainer = ({ setGameOver }: IBoardContainer) => {
   const [ballPositionX, setBallPositionX] = useState(50);
   const [ballPositionY, setBallPositionY] = useState(50);
   const [isBallRightToLeft, setIsBallRightToLeft] = useState(false);
@@ -31,7 +32,7 @@ const BoardContainer = () => {
       ballPositionX >= 93 &&
       (playerPosition > ballPositionY || playerPosition + 20 < ballPositionY)
     ) {
-      console.log('game over');
+      setGameOver({ isGameOver: true, winner: 'player' });
     }
     if (ballPositionY >= 97 && !isBallBottomToUp) {
       setIsBallBottomToUp(true);
@@ -51,6 +52,7 @@ const BoardContainer = () => {
     isBallBottomToUp,
     isBallRightToLeft,
     playerPosition,
+    setGameOver,
   ]);
   return (
     <Board>

@@ -7,6 +7,7 @@ function App() {
   const [playerPosition, setPlayerPosition] = useState(
     defaultPositions.playerPosition
   );
+  const [gameOver, setGameOver] = useState({ isGameOver: false, winner: '' });
 
   const handleKeyUpDown = (event: KeyboardEvent) => {
     if (event.key === 'ArrowUp') {
@@ -60,7 +61,7 @@ function App() {
             DOWN
           </ButtonDown>
         </section>
-        <BoardContainer />
+        <BoardContainer setGameOver={setGameOver} />
       </BoardOuter>
     </PositionsContext.Provider>
   );
