@@ -1,8 +1,5 @@
 import { createContext } from 'react';
+import { IGameOver } from '../types/types';
 
-interface IGameOver {
-  isGameOver: boolean;
-  winner: string;
-}
 export const defaultGameOver: IGameOver = { isGameOver: false, winner: '' };
 export const GameOverContext = createContext(defaultGameOver);
